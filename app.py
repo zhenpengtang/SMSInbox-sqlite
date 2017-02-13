@@ -14,7 +14,7 @@ class MainHandler(tornado.web.RequestHandler):
         if self.get_argument("get_token")=="get_token_md5":
             sms_list = db.read_sms()
             sms_list.reverse()
-            self.render("templates/index.html",smslist=sms_list)
+            self.render("templates/test.html",smslist=sms_list)
 
     def post(self):
         #print self.request.body
@@ -30,7 +30,7 @@ class SmsHandler(tornado.web.RequestHandler):
     def get(self):
         sms_list=getSMSList()
         sms_test_list=get_the_test_sms(sms_list)
-        self.render("templates/index.html",smslist=sms_test_list)
+        self.render("templates/test.html",smslist=sms_test_list)
 
 application = tornado.web.Application([
     (r"/test", MainHandler),
