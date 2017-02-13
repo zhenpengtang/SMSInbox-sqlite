@@ -7,7 +7,7 @@ class db():
         self.db_file=db_file
 
     def write_sms(self,phone,datetime,body):
-        data=(phone,datetime,body)
+        data=(phone,datetime.replace(".",":"),body)
         con = sqlite3.connect(self.db_file)
         cu = con.cursor()
         #cu.execute("create table inbox(phone text,datetime text,body text)")

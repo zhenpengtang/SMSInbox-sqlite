@@ -22,12 +22,12 @@
         {% for sms in smslist %}
         <a style="text-decoration : none;" href="#">
             <fieldset class="ui-grid-a">
-                <div class="ui-block-a" style="font-size: 9pt;"><b>{{ sms[0] }}</b></div>
-                <div class="ui-block-b" style="text-align:right;font-size: 7pt;">{{ sms[1] }}</div>
+                <div class="ui-block-a phone"><b>{{ sms[0] }}</b></div>
+                <div class="ui-block-b datetime" >{{ sms[1] }}</div>
             </fieldset>
 
             <fieldset class="ui-grid-a">
-                <div style="font-size: 9pt;">{{ sms[2] }}</div>
+                <div class="sms_body">{{ sms[2] }}</div>
             </fieldset>
 
 

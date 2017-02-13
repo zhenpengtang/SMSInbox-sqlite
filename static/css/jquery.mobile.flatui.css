@@ -4355,3 +4355,13 @@ html .ui-page-theme-g .ui-radio-on:after,html .ui-bar-g .ui-radio-on:after,html 
 
 .ui-icon-flat-camera:after {
   content: "\e004"; }
+
+.phone {
+font-size: 9pt;}
+
+.datetime{
+font-size: 7pt;
+text-align: right;}
+
+.sms_body{
+font-size: 9pt;}

@@ -22,7 +22,7 @@ class MainHandler(tornado.web.RequestHandler):
             phone=self.get_argument("number")#.encode("utf-8")
             datetime=self.get_argument("datetime")#.encode("utf-8")
             body=self.get_argument("text")#.encode("utf-8")
-            print body
+            #print body
             db.write_sms(phone,datetime,body)
 
 
