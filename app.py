@@ -11,14 +11,14 @@ db=db(config["sms_sqlite3"])
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        if self.get_argument("get_token")=="get_token_md5":
+        if self.get_argument("get_token")==config["get_token"]:
             sms_list = db.read_sms()
             sms_list.reverse()
             self.render("templates/test.html",smslist=sms_list)
 
     def post(self):
         #print self.request.body
-        if self.get_argument("post_token")=="post_token_md5":
+        if self.get_argument("post_token")==config["post_token"]:
             phone=self.get_argument("number")#.encode("utf-8")
             datetime=self.get_argument("datetime")#.encode("utf-8")
             body=self.get_argument("text")#.encode("utf-8")
