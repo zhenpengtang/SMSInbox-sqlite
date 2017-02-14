@@ -1,4 +1,4 @@
 get_token: get_token_md5
 post_token: post_token_md5
-sms_sqlite3: sms\sms.db
+sms_sqlite3: sms/sms.db
 test: test
