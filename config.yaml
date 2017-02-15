@@ -1,4 +1,7 @@
 get_token: get_token_md5
 post_token: post_token_md5
 sms_sqlite3: sms/sms.db
-test: test
+apple-touch-icon: static/apple-touch-icon
+css: static/css
+js: static/js
+templates: 

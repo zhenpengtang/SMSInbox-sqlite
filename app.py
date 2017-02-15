@@ -12,7 +12,7 @@ db=db(config["sms_sqlite3"])
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         if self.get_argument("get_token")==config["get_token"]:
-            sms_list = db.read_sms()
+            sms_list = db.get_all_numbers_one_sms(db.read_sms())
             sms_list.reverse()
             self.render("templates/test.html",smslist=sms_list)
 
@@ -28,8 +28,8 @@ class MainHandler(tornado.web.RequestHandler):
 
 class SmsHandler(tornado.web.RequestHandler):
     def get(self):
-        sms_list=getSMSList()
-        sms_test_list=get_the_test_sms(sms_list)
+        sms_test_list=db.get_all_numbers_one_sms()
+        sms_test_list.reverse()
         self.render("templates/test.html",smslist=sms_test_list)
 
 application = tornado.web.Application([

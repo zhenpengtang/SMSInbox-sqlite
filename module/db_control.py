@@ -5,6 +5,7 @@ import sqlite3
 class db():
     def __init__(self,db_file):
         self.db_file=db_file
+        self.number_list=[]
 
     def write_sms(self,phone,datetime,body):
         data=(phone,datetime.replace(".",":"),body)
@@ -30,12 +31,20 @@ class db():
         con.commit()
         con.close()
 
+    def read_test_sms(self):
+        test_list=[]
+        for i in self.read_sms():
+            if str(i).find("test")>=0:
+                test_list.append(i)
+        return test_list
 
-#t=db(db_file)
-#del_all()
-#write_sms("10010","2017-2-11 14:09","hello world")
-#print t.read_sms()
+    def get_all_numbers_one_sms(self,all_sms):
+        all_numbers_one_sms_list=[]
+        number_list=[]
+        for i in all_sms:
+            #print i
+            if i[0] not in number_list:
+                number_list.append(i[0])
+                all_numbers_one_sms_list.append(i)
 
-
-
-
+        return all_numbers_one_sms_list
