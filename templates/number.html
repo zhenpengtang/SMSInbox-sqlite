@@ -14,13 +14,13 @@
 
     <div data-role="header">
         <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
-        <h1>Inbox</h1>
+        <h1>{{ title }}</h1>
         <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
     </div>
 
     <div class="ui-content" data-role="content" role="main">
         {% for sms in smslist %}
-        <a style="text-decoration : none;" href="number?get_token={{ get_token }}&number={{ sms[0] }}">
+        <a style="text-decoration : none;" href="#">
             <fieldset class="ui-grid-a">
                 <div class="ui-block-a phone"><b>{{ sms[0] }}</b></div>
                 <div class="ui-block-b datetime" >{{ sms[1] }}</div>
