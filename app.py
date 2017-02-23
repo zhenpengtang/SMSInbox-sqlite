@@ -28,7 +28,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 class SmsHandler(tornado.web.RequestHandler):
     def get(self):
-        sms_test_list=db.get_all_numbers_one_sms()
+        sms_test_list=[]
         sms_test_list.reverse()
         self.render("templates/test.html",smslist=sms_test_list)
 
@@ -44,7 +44,8 @@ class NumberHandler(tornado.web.RequestHandler):
                     number_list.append(k)
             self.render("templates/number.html",
                         smslist=number_list,
-                        title=number)
+                        title=number,
+                        get_token = config["get_token"])
 
 application = tornado.web.Application([
     (r"/test", MainHandler),

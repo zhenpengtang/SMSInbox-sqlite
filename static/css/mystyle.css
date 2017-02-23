@@ -1,0 +1,26 @@
+.phone {
+font-size: 9pt;
+text-align: left;}
+
+.datetime{
+font-size: 7pt;
+text-align: right;}
+
+.all_datetime{
+font-size: 7pt;
+text-align: center;}
+
+
+.sms_body{
+border: 2px solid #a1a1a1;
+padding: 10px 10px;
+background: #dddddd;
+width: 75%;
+border-radius: 10px;
+font-size: 9pt;}
+
+.all_sms_body{
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+font-size: 9pt;}
